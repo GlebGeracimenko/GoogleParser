@@ -51,7 +51,7 @@ public class GoogleParser {
 
         for (String link : links) {
             webDriver.navigate().to(link);
-            System.out.println(" * " + webDriver.getTitle());
+            System.out.println(" * " + webDriver.getTitle()); //waiting for page loading
             webDriver.navigate().back();
         }
 
