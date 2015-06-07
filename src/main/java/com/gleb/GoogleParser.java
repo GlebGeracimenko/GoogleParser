@@ -43,7 +43,7 @@ public class GoogleParser {
         new WebDriverWait(webDriver, 10).until(new ExpectedCondition<Boolean>() {
             @Override
             public Boolean apply(WebDriver webDriver) {
-                return webDriver.getTitle().toLowerCase().startsWith(keyToSearch.toLowerCase());
+                return webDriver.getTitle().toLowerCase().startsWith(keyToSearch.toLowerCase()); //waiting for Google search page loading
             }
         });
 
@@ -51,7 +51,7 @@ public class GoogleParser {
 
         for (String link : links) {
             webDriver.navigate().to(link);
-            System.out.println(" * " + webDriver.getTitle()); //waiting for page loading
+            System.out.println(" * " + webDriver.getTitle()); //waiting for the page is loaded and outputs page name
             webDriver.navigate().back();
         }
 
