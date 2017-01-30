@@ -11,6 +11,7 @@ public class Test {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Input search request");
         String key = scanner.nextLine();
+        System.setProperty("webdriver.gecko.driver", "../geckodriver");
         GoogleParser googleParser = new GoogleParser(key);
         googleParser.start();
     }

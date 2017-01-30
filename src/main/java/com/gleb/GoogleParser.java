@@ -48,15 +48,18 @@ public class GoogleParser {
         });
 
         List<String> links = getLinks(webDriver.findElements(By.xpath(GOOGLE_PARSE_PAGE)));
-
+        List<String> titles = new ArrayList<>();
         for (String link : links) {
             webDriver.navigate().to(link);
-            System.out.println(" * " + webDriver.getTitle()); //waiting for the page is loaded and outputs page name
+            titles.add(" * " + webDriver.getTitle()); //waiting for the page is loaded and outputs page name
             webDriver.navigate().back();
         }
 
         webDriver.quit();
 
+        for (String s : titles) {
+            System.out.println(s);
+        }
     }
 
     /**
